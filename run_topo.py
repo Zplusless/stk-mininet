@@ -84,10 +84,10 @@ if __name__ == "__main__":
                 n_, m_ = get_next(n,m, config.n, config.m)
                 node1 = f'node_{n}-{m}'
                 node2 = f'node_{n}-{m_}'
-                node3 = f'node_{n_}-{m}'
+                # node3 = f'node_{n_}-{m}'
 
                 set_ip_table(net, node1, node2)
-                set_ip_table(net, node1, node3)
+                # set_ip_table(net, node1, node3)
 
     CLI( net )
 
