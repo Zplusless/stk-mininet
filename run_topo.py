@@ -50,13 +50,17 @@ topo={'topo':None}
 # node1 node2 是要调整链接的两颗卫星
 @app.route('/modify/', methods=['POST'])
 def modify():
-    modify_list = request.form.get('modify_list')
+    modify_list = request.get_json()
+
+    print(type(modify_list))
+    print(modify_list)
+
     if not isinstance(modify_list, list):
         modify_list = list(modify_list)
 
     for param in modify_list:
         node1 = param.get('node1')
-        node2 = param.get('node1')
+        node2 = param.get('node2')
         modifyNode(topo['topo'], node1, node2, param)
 
     return 'modify finish'
