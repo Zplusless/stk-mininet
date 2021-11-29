@@ -70,7 +70,7 @@ def modifyNode(net:Mininet, node1:str, node2:str, params1:Dict):
         ifconfig=None,
         up=True
     """
-    modifyLink(net, node1, node2, params1, params2={'noChange':None})
+    modifyLink(net, node1, node2, params1, params2=None)
 
 def set_ip_table(net, node1, node2):
     h1 = net.getNodeByName( node1 )
